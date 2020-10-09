@@ -1,4 +1,8 @@
-import { FETCH_SMURFS_START, FETCH_SMURFS_SUCCESS } from '../actions';
+import {
+  FETCH_SMURFS_START,
+  FETCH_SMURFS_SUCCESS,
+  POST_SMURFS_SUCCESS,
+} from '../actions';
 
 //what endpoints does our server need?******************
 const initialSmurf = [
@@ -27,6 +31,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
+        smurfs: action.payload,
+      };
+    case POST_SMURFS_SUCCESS:
+      return {
+        ...state,
         smurfs: action.payload,
       };
     default:

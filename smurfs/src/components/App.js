@@ -22,7 +22,11 @@ function App(props) {
       <div>
         <SmurfForm seturl={setUrl} />
         {props.smurfs.map((smurf) => (
-          <h1 key={smurf.id}>{smurf.name}</h1>
+          <div key={smurf.id}>
+            <h1>{smurf.name}</h1>
+            <h2>{smurf.age}</h2>
+            <h3>{smurf.height}</h3>
+          </div>
         ))}
       </div>
     </div>
